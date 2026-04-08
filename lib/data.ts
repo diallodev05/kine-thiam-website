@@ -66,8 +66,7 @@ interface Review {
 export const site = {
   name: "Fatou Kine Thiam",
   alias: "Plume d'Or",
-  tagline:
-    "Ecrire, c'est tendre la main a travers le silence.",
+  tagline: "Ecrire, c'est tendre la main a travers le silence.",
   email: "contact@fatoukinethiam.com",
   whatsapp: "221781234567",
   social: {
@@ -77,9 +76,13 @@ export const site = {
   },
 };
 
-// --------------- Author portrait ---------------
+// --------------- Images (Unsplash en attendant des fichiers dans public/images/) ---------------
 
-export const authorPortrait = "/images/author-portrait.jpg";
+const u = (id: string, w = 1200) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+// Remplacez par "/images/author-portrait.jpg" une fois le fichier ajouté sous public/images/
+export const authorPortrait = u("photo-1494790108377-be9c29b29330", 960);
 
 // --------------- Timeline (About page) ---------------
 
@@ -111,7 +114,7 @@ export const book = {
   subtitle: "Recueil de reflexions et de poesie",
   description:
     "Un voyage intime entre memoire et presence, ou chaque texte cherche la beaute exigeante qui nait quand on accepte de regarder en face.",
-  coverImage: "/images/book-cover.jpg",
+  coverImage: u("photo-1544947950-fa07a98d237f", 900),
   purchaseUrl: "#",
   excerpt:
     "Il y a des silences qui pesent plus lourd que les cris. Ce livre est ne de ces silences-la, de cette volonte de dire sans elever la voix.",
@@ -127,15 +130,13 @@ export const reviews: Review[] = [
   },
   {
     id: 2,
-    quote:
-      "Fatou Kine Thiam reussit l'exploit de rendre l'intime universel.",
+    quote: "Fatou Kine Thiam reussit l'exploit de rendre l'intime universel.",
     author: "Boubacar Boris Diop",
     role: "Romancier et essayiste",
   },
   {
     id: 3,
-    quote:
-      "Ce livre est un acte de courage poetique.",
+    quote: "Ce livre est un acte de courage poetique.",
     author: "Felwine Sarr",
     role: "Philosophe et ecrivain",
   },
@@ -184,8 +185,7 @@ export const posts: Post[] = [
   {
     slug: "lettre-a-ma-mere",
     title: "Lettre a ma mere",
-    excerpt:
-      "Une lettre jamais envoyee, enfin partagee.",
+    excerpt: "Une lettre jamais envoyee, enfin partagee.",
     category: "Lettres",
     date: "2025-02-20",
     readTime: "7 min",
@@ -198,8 +198,7 @@ export const posts: Post[] = [
   {
     slug: "poeme-dakar",
     title: "Dakar, ville ouverte",
-    excerpt:
-      "Un poeme en hommage a la ville qui m'a vue naitre.",
+    excerpt: "Un poeme en hommage a la ville qui m'a vue naitre.",
     category: "Poèmes",
     date: "2025-01-10",
     readTime: "3 min",
@@ -218,25 +217,25 @@ export function getPostBySlug(slug: string): Post | undefined {
 // --------------- Media ---------------
 
 export const galleryImages: string[] = [
-  "/images/gallery/gallery-1.jpg",
-  "/images/gallery/gallery-2.jpg",
-  "/images/gallery/gallery-3.jpg",
-  "/images/gallery/gallery-4.jpg",
-  "/images/gallery/gallery-5.jpg",
-  "/images/gallery/gallery-6.jpg",
+  u("photo-1524578271616-d9ffdf9df852", 800),
+  u("photo-1481627834876-b7833e8f5570", 800),
+  u("photo-1519682337058-a94d519337bc", 800),
+  u("photo-1507842217343-803bb6f41727", 800),
+  u("photo-1512820790803-83ca734da794", 800),
+  u("photo-1516979187457-637abb4f9353", 800),
 ];
 
 export const mediaVideos: MediaVideo[] = [
   {
     id: 1,
-    thumb: "/images/video-thumb-1.jpg",
+    thumb: u("photo-1507003211169-0a1dd7228f2d", 1200),
     duration: "12:34",
     source: "https://youtube.com/watch?v=example1",
     title: "Rencontre litteraire a Dakar",
   },
   {
     id: 2,
-    thumb: "/images/video-thumb-2.jpg",
+    thumb: u("photo-1519682337058-a94d519337bc", 1200),
     duration: "8:15",
     source: "https://youtube.com/watch?v=example2",
     title: "Lecture publique : Autour des epines",
